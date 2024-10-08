@@ -1,0 +1,37 @@
+---
+import '@fontsource/luckiest-guy';
+import '@fontsource/pacifico';
+---
+
+<nav>
+  <h1>Halloween Story <span>AI Generator</span></h1>
+</nav>
+
+
+<style>
+  nav {
+    text-align: center;
+  }
+  span {
+    font-family: 'Pacifico', cursive;
+  }
+  h1 {
+    display: block;
+    font-family: 'Luckiest Guy', system-ui;
+    font-size: 4rem;
+    color: #ff6600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: colorCycle 8s infinite;
+  }
+  @keyframes colorCycle {
+    0%, 100% {
+      color: #ff6600; /* Orange */
+    }
+    33% {
+      color: #9900cc; /* Purple */
+    }
+    66% {
+      color: #39ff14; /* Spooky Green */
+    }
+  }
+</style>
