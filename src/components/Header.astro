@@ -1,6 +1,6 @@
 ---
 import '@fontsource/luckiest-guy';
-import '@fontsource/pacifico';
+import '@fontsource-variable/merriweather-sans/wght-italic.css';
 ---
 
 <nav>
@@ -10,28 +10,30 @@ import '@fontsource/pacifico';
 
 <style>
   nav {
+    margin: 0px;
     text-align: center;
   }
   span {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Merriweather Sans Variable', sans-serif;
+    font-style: italic;
   }
   h1 {
     display: block;
     font-family: 'Luckiest Guy', system-ui;
-    font-size: 4rem;
+    font-size: 3rem;
     color: #ff6600;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    animation: colorCycle 8s infinite;
+    animation: colorCycle 10s infinite;
   }
   @keyframes colorCycle {
     0%, 100% {
-      color: #ff6600; /* Orange */
+      color: #ff6600;
     }
     33% {
-      color: #9900cc; /* Purple */
+      color: #ff7d26;
     }
     66% {
-      color: #39ff14; /* Spooky Green */
+      color: #bb4d03;
     }
   }
 </style>

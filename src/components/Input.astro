@@ -1,0 +1,13 @@
+---
+import { CldUploadWidget } from 'astro-cloudinary';
+---
+
+<CldUploadWidget
+  uploadPreset='hackathon-cloudinary'
+  options={{
+    sources: ['local'],
+    multiple: true
+  }}
+  >
+  <button>Upload</button>
+</CldUploadWidget>

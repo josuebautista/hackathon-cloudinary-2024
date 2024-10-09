@@ -1,11 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Input from '../components/Input.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Header />
+		<p>
+			Upload one or more images to create a halloween story
+		</p>
+		<section>
+			<Input />
+		</section>
 	</main>
 </Layout>
 
@@ -17,5 +24,13 @@ import Header from '../components/Header.astro';
 		max-width: calc(100% - 2rem);
 		font-size: 20px;
 		line-height: 1.6;
+	}
+	p {
+		color: light-dark(#313131, #a7a5a5);
+		text-align: center;
+	}
+	section {
+		display: flex;
+		justify-content: center;
 	}
 </style>

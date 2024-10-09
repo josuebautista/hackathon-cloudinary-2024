@@ -11,6 +11,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.4
         version: 0.9.4(typescript@5.6.2)
+      '@fontsource-variable/merriweather-sans':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource/luckiest-guy':
         specifier: ^5.1.0
         version: 5.1.0
@@ -488,6 +491,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/merriweather-sans@5.1.0':
+    resolution: {integrity: sha512-Jb0ArUomkZrcV9gSquZpBS5JNTrvwWpJm6hEvT3qcJh/2vQX0OJi1Wy9cuN6u+rwkBF7aQ7fdaaY/I1nLL+OnA==}
 
   '@fontsource/luckiest-guy@5.1.0':
     resolution: {integrity: sha512-F1V0LnFW7lSdmkv5zHfeBZ9aI7JLfwa0g+FCv+16sw/yvABH/oqdiaZgc3sri5QKaaEaZwHeoVUuXcn2DGbuxQ==}
@@ -2768,6 +2774,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.23.1':
     optional: true
+
+  '@fontsource-variable/merriweather-sans@5.1.0': {}
 
   '@fontsource/luckiest-guy@5.1.0': {}
 
