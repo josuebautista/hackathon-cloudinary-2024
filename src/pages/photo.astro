@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCldImageUrl } from "astro-cloudinary/helpers";
+
+
+
+const { searchParams } = Astro.url;
+const id = searchParams.get("id");
+
+// TODO: Redirect to to 404 page
+if (id === null) return Astro.redirect("/");
+
+const url = getCldImageUrl({
+  src: id
+});
+console.log({id, url})
+---
+
+<Layout title="Welcome to Astro" >
+  <main>
+    <section>
+      <img src={url} alt={`${url}-image`}>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+  section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+	p {
+		color: light-dark(#313131, #a7a5a5);
+		text-align: center;
+	}
+  img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px;
+  }
+</style>

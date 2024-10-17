@@ -1,13 +1,30 @@
 ---
-import { CldUploadWidget } from 'astro-cloudinary';
+import { CldUploadWidget } from "astro-cloudinary";
 ---
 
 <CldUploadWidget
-  uploadPreset='hackathon-cloudinary'
+  id="upload-event"
+  uploadPreset="hackathon-cloudinary"
   options={{
-    sources: ['local'],
-    multiple: true
+    sources: ["local"],
+    multiple: true,
+    maxFiles: 2,
   }}
-  >
+  class="px-3 py-1 bg-orange-600 rounded-md my-5 hover:bg-orange-500"
+>
   <button>Upload</button>
 </CldUploadWidget>
+
+<script>
+  import { navigate } from "astro:transitions/client";
+
+  const widget = document.querySelector("#upload-event");
+  if (widget) {
+    widget.addEventListener("clduploadwidget:success", ((
+      e: CustomEvent<{ info: { public_id: string } }>,
+    ) => {
+      const publicId = e.detail.info.public_id;
+      navigate(`/photo?id=${publicId}`);
+    }) as EventListener);
+  }
+</script>
