@@ -5,14 +5,16 @@ import { CldUploadWidget } from "astro-cloudinary";
 <CldUploadWidget
   id="upload-event"
   uploadPreset="hackathon-cloudinary"
+  signatureEndpoint="/api/sign-cloudinary"
   options={{
     sources: ["local"],
     multiple: true,
     maxFiles: 2,
+    detection: "captioning",
   }}
-  class="px-3 py-1 bg-orange-600 rounded-md my-5 hover:bg-orange-500"
+  class="md:w-1/2 w-3/4 py-4 bg-orange-600 rounded-md my-5 hover:bg-orange-500 transition duration-200 cursor:pointer"
 >
-  <button>Upload</button>
+  <button class="text-2xl">Upload</button>
 </CldUploadWidget>
 
 <script>
@@ -21,10 +23,18 @@ import { CldUploadWidget } from "astro-cloudinary";
   const widget = document.querySelector("#upload-event");
   if (widget) {
     widget.addEventListener("clduploadwidget:success", ((
-      e: CustomEvent<{ info: { public_id: string } }>,
+      e: CustomEvent<{
+        info: {
+          public_id: string;
+          info: { detection: { captioning: { data: { caption: string } } } };
+        };
+      }>,
     ) => {
+      console.log(e.detail);
       const publicId = e.detail.info.public_id;
-      navigate(`/photo?id=${publicId}`);
+      const description = e.detail.info.info.detection.captioning.data.caption;
+      console.log({ publicId, description });
+      navigate(`/photo?id=${publicId}&description=${description}`);
     }) as EventListener);
   }
 </script>

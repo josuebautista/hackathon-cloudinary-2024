@@ -1,33 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Input from '../components/Input.astro';
+import Layout from "../layouts/Layout.astro";
+import Input from "../components/Input.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<p>
-			Upload an images to create a halloween story
-		</p>
-		<section>
+	<section>
+		<p>Upload an image to create a halloween story</p>
+		<p>The image will be our protagonist</p>
+		<br/>
+		<div class="input-container md:w-1/3 w-full">
 			<Input />
-		</section>
-	</main>
+		</div>
+	</section>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	p {
-		color: light-dark(#313131, #a7a5a5);
-		text-align: center;
-	}
 	section {
+		min-height: 70vh;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.input-container {
 		display: flex;
 		justify-content: center;
 	}

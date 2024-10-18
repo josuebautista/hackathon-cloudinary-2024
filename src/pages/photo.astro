@@ -1,46 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCldImageUrl } from "astro-cloudinary/helpers";
-
-
+import { getAssetInfo } from "../utils/get-description";
+import { getPrompt } from "../utils/getPrompt";
 
 const { searchParams } = Astro.url;
 const id = searchParams.get("id");
+let description = searchParams.get("description");
 
-// TODO: Redirect to to 404 page
-if (id === null) return Astro.redirect("/");
+if (id === null) return Astro.redirect("/404?reason=ID");
+
+if (description === null) {
+  description = await getAssetInfo(id);
+  if (description === null) return Astro.redirect("/404?reason=Description");
+}
+
+const { title, prompt, environment, time_day } = getPrompt();
 
 const url = getCldImageUrl({
-  src: id
+  src: id,
 });
-console.log({id, url})
+
+console.log({ id, description, url });
 ---
 
-<Layout title="Welcome to Astro" >
-  <main>
-    <section>
-      <img src={url} alt={`${url}-image`}>
-    </section>
-  </main>
+<Layout title="Welcome to Astro">
+  <section>
+    <img src={url} alt={`${url}-image`} />
+  </section>
 </Layout>
 
 <style>
-  main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		font-size: 20px;
-		line-height: 1.6;
-	}
   section {
     display: flex;
     justify-content: center;
     gap: 10px;
   }
-	p {
-		color: light-dark(#313131, #a7a5a5);
-		text-align: center;
-	}
+  p {
+    color: light-dark(#313131, #a7a5a5);
+    text-align: center;
+  }
   img {
     max-width: 80%;
     height: auto;

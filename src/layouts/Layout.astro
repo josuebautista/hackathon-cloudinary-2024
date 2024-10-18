@@ -1,6 +1,8 @@
 ---
-import '@fontsource-variable/merriweather-sans'
-import Header from '../components/Header.astro';
+import "@fontsource-variable/merriweather-sans";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 interface Props {
 	title: string;
 }
@@ -19,8 +21,18 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
-		<slot />
+		<div class="bg-halloween"/>
+		<nav class="container">
+			<Header />
+		</nav>
+		<hr />
+		<main class="container">
+			<slot />
+		</main>
+		<hr />
+		<footer class="container">
+			<Footer />
+		</footer>
 	</body>
 </html>
 
@@ -29,11 +41,51 @@ const { title } = Astro.props;
 		color-scheme: light dark;
 	}
 	body {
-		margin: 0px;
-		box-sizing: content-box;
-		min-height: 100vw;
-		font-family: 'Merriweather Sans Variable', sans-serif;
-		background-color: light-dark(#FFF, #1B1B1B);
+		margin: 0;
+		position: relative;
+		z-index: 1;
+		box-sizing: border-box;
+		min-height: 100vh;
+		font-family: "Merriweather Sans Variable", sans-serif;
+		background-color: light-dark(#fff, #1b1b1b);
 		color: light-dark(#283747, #d4dbdb);
+	}
+	nav {
+		margin: 0px auto 20px;
+		text-align: center;
+		line-height: 1.4;
+	}
+	.bg-halloween {
+		background-image: url('/bg-halloween.png');
+		background-repeat: repeat;
+		background-attachment: fixed;
+		opacity: 0.3;
+		position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+		z-index: -1;
+	}
+	hr {
+		height: 4px;
+		-webkit-filter: blur(8px);
+		background: linear-gradient(to bottom, #ff6600, #bb4d03);
+	}
+	main {
+		margin: auto;
+		padding: 1rem;
+		font-size: 1.4rem;
+		line-height: 1.5;
+		min-height: 80vh;
+	}
+	p {
+		color: light-dark(#313131, #a7a5a5);
+		text-align: center;
+	}
+	footer {
+		margin: 0px auto;
+		padding: 1rem;
+		text-align: center;
 	}
 </style>

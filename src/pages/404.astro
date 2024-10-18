@@ -4,41 +4,28 @@ const { searchParams } = Astro.url;
 const reason = searchParams.get("reason");
 ---
 
-<Layout title={`Error while ${reason ? reason : 'Navigate'}`}>
-  <main>
-    <div class="content">
-      <h1 class="text-4xl font-bold">
-        Something went wrong
-      </h1>
-    </br>
-      <a href="/">
-      Return to home page
-      </a>
-    </div>
-  </main>
+<Layout title={`Error Page`}>
+  <div class="content md:text-5xl text-2xl">
+    <h1 class="font-bold md:py-5 py-1">
+      Something went wrong
+    </h1>
+    <br/>
+    <a class="md:text-xl text-lg hover:opacity-80 transition duration-200" href="/"> Return to home page </a>
+  </div>
 </Layout>
 
 <style>
-  main {
-    min-height: 85vw;
-    display: grid;
-    place-items: center;
-  }
   .content {
     text-align: center;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
+    line-height: 1rem;
+    height: 75vh;
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+  } 
   a {
-    opacity: 0.8;
-    margin-top: 40px;
+    opacity: 0.6;
   }
-  a:hover {
-    opacity: 1;
-  }
-
 </style>
 
 <script>
