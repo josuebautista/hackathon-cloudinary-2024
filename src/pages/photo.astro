@@ -4,45 +4,111 @@ import { getCldImageUrl } from "astro-cloudinary/helpers";
 import { getAssetInfo } from "../utils/get-description";
 import { getPrompt } from "../utils/getPrompt";
 
-const { searchParams } = Astro.url;
-const id = searchParams.get("id");
-let description = searchParams.get("description");
+// const { searchParams } = Astro.url;
+// const id = searchParams.get("id");
+// let description = searchParams.get("description");
 
-if (id === null) return Astro.redirect("/404?reason=ID");
+// if (id === null) return Astro.redirect("/404?reason=ID");
 
-if (description === null) {
-  description = await getAssetInfo(id);
-  if (description === null) return Astro.redirect("/404?reason=Description");
-}
+// if (description === null) {
+//   description = await getAssetInfo(id);
+//   if (description === null) return Astro.redirect("/404?reason=Description");
+// }
 
 const { title, prompt, environment, time_day } = getPrompt();
 
-const url = getCldImageUrl({
-  src: id,
-});
+// const url = getCldImageUrl({
+//   src: id,
+// });
 
-console.log({ id, description, url });
+// console.log({ id, description, url });
 ---
 
 <Layout title="Welcome to Astro">
-  <section>
-    <img src={url} alt={`${url}-image`} />
+  <section class="mx-auto max-w-[1200px]">
+    <div class="mx-auto max-w-[700px]">
+      <img
+        class="md:max-w-4/5 max-w-full"
+        src={"/vas_a_caer.jpg"}
+        alt={`${"url"}-image`}
+      />
+    </div>
+    <!-- <p>{description}</p> -->
+    <p class="mx-auto max-w-[800px] text-center my-5">
+      The image shows a close-up of a fluffy gray and white cat with a stern
+      expression, accompanied by text in Spanish that reads "You're an imbecile.
+    </p>
+    <br />
+    <article>
+      <h2>
+        {title}
+      </h2>
+      <p>
+        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
+        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
+        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
+        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
+      </p>
+      <p>
+        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
+        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
+        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
+        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
+        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
+        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
+        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
+        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
+      </p>
+      <p>
+        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
+        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
+        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
+        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
+      </p>
+      <p>
+        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
+        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
+        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
+        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
+        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
+        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
+        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
+        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
+      </p>
+    </article>
   </section>
 </Layout>
 
 <style>
   section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    background: light-dark(#fff, #1b1b1b);
+    border: 4px solid light-dark(#28374773, #d4dbdb49);
+    border-radius: 15px;
+    padding: 1rem;
+  }
+  h2 {
+    text-align: center;
   }
   p {
     color: light-dark(#313131, #a7a5a5);
     text-align: center;
+    font-size: 1.2rem;
   }
+  article p {
+    font-size: 1.1rem;
+    margin: 15px auto;
+  }
+
   img {
-    max-width: 80%;
     height: auto;
     border-radius: 15px;
+  }
+  article {
+    margin: auto;
+    gap: 20px;
+    max-width: 1000px;
   }
 </style>
