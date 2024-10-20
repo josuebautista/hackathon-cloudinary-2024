@@ -2,34 +2,40 @@
 import Layout from "../layouts/Layout.astro";
 import { getCldImageUrl } from "astro-cloudinary/helpers";
 import { getAssetInfo } from "../utils/get-description";
-import { getPrompt } from "../utils/getPrompt";
+import { getStory } from "../utils/get-prompt";
+import { getRandomName } from "src/utils/get-random-name";
+import { getPromptsToGenerate } from "src/utils/get-prompts-to-generate";
 
-// const { searchParams } = Astro.url;
-// const id = searchParams.get("id");
-// let description = searchParams.get("description");
+const { searchParams } = Astro.url;
+const id = searchParams.get("id");
+let description = searchParams.get("description");
+let name = searchParams.get("name");
+if (id === null) return Astro.redirect("/404?reason=ID");
 
-// if (id === null) return Astro.redirect("/404?reason=ID");
+if (description === null) {
+  description = await getAssetInfo(id);
+  if (description === null) return Astro.redirect("/404?reason=Description");
+}
 
-// if (description === null) {
-//   description = await getAssetInfo(id);
-//   if (description === null) return Astro.redirect("/404?reason=Description");
-// }
+if (name === null) name = getRandomName();
+const story = getStory(name);
+const { title, paragraphs  } = story;
 
-const { title, prompt, environment, time_day } = getPrompt();
+const url = getCldImageUrl({
+  src: id,
+});
 
-// const url = getCldImageUrl({
-//   src: id,
-// });
+const images = getPromptsToGenerate(story, id);
 
-// console.log({ id, description, url });
+console.log({ id, description, url, images });
 ---
 
 <Layout title="Welcome to Astro">
   <section class="mx-auto max-w-[1200px]">
     <div class="mx-auto max-w-[700px]">
       <img
-        class="md:max-w-4/5 max-w-full"
-        src={"/vas_a_caer.jpg"}
+        class="max-w-full md:max-w-4/5 "
+        src={url}
         alt={`${"url"}-image`}
       />
     </div>
@@ -40,41 +46,27 @@ const { title, prompt, environment, time_day } = getPrompt();
     </p>
     <br />
     <article>
-      <h2>
+      <h2 class="text-xl md:text-2xl">
         {title}
       </h2>
-      <p>
-        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
-        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
-        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
-        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
-      </p>
-      <p>
-        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
-        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
-        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
-        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
-        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
-        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
-        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
-        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
-      </p>
-      <p>
-        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
-        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
-        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
-        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
-      </p>
-      <p>
-        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
-        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
-        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
-        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
-        Aute et qui tempor anim non Lorem. Do veniam adipisicing ex deserunt
-        nisi. Excepteur duis fugiat do occaecat veniam fugiat culpa anim anim
-        reprehenderit sint cupidatat magna in. Excepteur occaecat ad labore ut
-        elit tempor reprehenderit ipsum in. Ut magna non cillum fugiat.
-      </p>
+      {
+        paragraphs.map((paragraph) => {
+          return (
+            <p class="prose dark:prose-invert">
+              {paragraph.text}
+            </p>
+            <div class="flex justify-center">
+              {paragraph.index_image !== null && 
+              <img
+                class="max-w-full md:max-w-4/5 "
+                src={images[paragraph.index_image]} 
+                alt={`${paragraph.index_image}-image`} 
+              />
+              }
+            </div>
+          )
+        })
+      }
     </article>
   </section>
 </Layout>
@@ -98,7 +90,7 @@ const { title, prompt, environment, time_day } = getPrompt();
     font-size: 1.2rem;
   }
   article p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin: 15px auto;
   }
 

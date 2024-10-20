@@ -2,25 +2,45 @@
 import { CldUploadWidget } from "astro-cloudinary";
 ---
 
-<CldUploadWidget
-  id="upload-event"
-  uploadPreset="hackathon-cloudinary"
-  signatureEndpoint="/api/sign-cloudinary"
-  options={{
-    sources: ["local"],
-    multiple: true,
-    maxFiles: 2,
-    detection: "captioning",
-  }}
-  class="md:w-1/2 w-3/4 py-4 bg-orange-600 rounded-md my-5 hover:bg-orange-500 transition duration-200 cursor:pointer"
->
-  <button class="text-2xl">Upload</button>
-</CldUploadWidget>
+<div>
+  <label class="text-xl" for="name">Character name:</label>
+  <input
+    class="py-3 text-lg text-center rounded-lg"
+    type="text"
+    name="name"
+    id="name"
+    placeholder="Optional"
+  />
+  <br />
+  <br />
+  <CldUploadWidget
+    id="upload-event"
+    uploadPreset="hackathon-cloudinary"
+    signatureEndpoint="/api/sign-cloudinary"
+    options={{
+      sources: ["local"],
+      multiple: true,
+      maxFiles: 2,
+      detection: "captioning",
+    }}
+    class="py-4 px-10 bg-orange-600 rounded-md my-5 hover:bg-orange-500 transition duration-200 cursor:pointer"
+  >
+    <button class="text-2xl">Upload Image</button>
+  </CldUploadWidget>
+</div>
 
 <script>
   import { navigate } from "astro:transitions/client";
-
+  let name = "";
   const widget = document.querySelector("#upload-event");
+  const nameEl = document.getElementById("name");
+  if (nameEl) {
+    nameEl.addEventListener("input", (e) => {
+      const target = e.target as HTMLInputElement;
+      console.log(target.value);
+      name = target.value;
+    });
+  }
   if (widget) {
     widget.addEventListener("clduploadwidget:success", ((
       e: CustomEvent<{
@@ -30,11 +50,15 @@ import { CldUploadWidget } from "astro-cloudinary";
         };
       }>,
     ) => {
-      console.log(e.detail);
+      //console.log(e.detail);
       const publicId = e.detail.info.public_id;
       const description = e.detail.info.info.detection.captioning.data.caption;
-      console.log({ publicId, description });
-      navigate(`/photo?id=${publicId}&description=${description}`);
+      //console.log({ publicId, description, name });
+      if (name !== "") {
+        navigate(`/photo?id=${publicId}&description=${description}&name=${name}`);
+      } else {
+        navigate(`/photo?id=${publicId}&description=${description}`);
+      }
     }) as EventListener);
   }
 </script>
