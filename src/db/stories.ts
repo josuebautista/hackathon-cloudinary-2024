@@ -197,7 +197,160 @@ export const getFormatedStory = (character: string): Story => {
           prompt: "Shadowy figures on the deck of a haunted ship with tattered sails"
         }
       ]
-    }        
+    }, {
+      title: 'The Whispering Forest',
+      paragraphs: [
+        {
+          index_image: 0,
+          text: `It was said that no one who entered the Whispering Forest ever returned. The trees themselves were said to be alive, whispering secrets and luring people deeper into the woods. But ${main_character} didn’t believe the old legends. Determined to uncover the truth, ${main_character} ventured into the forest as the last light of day began to fade.`
+        },
+        {
+          index_image: null,
+          text: `The air grew colder as ${main_character} walked further, the trees towering overhead like silent guardians. Strange whispers began to fill the air, soft and indistinct at first, but growing louder with every step.`
+        },
+        {
+          index_image: null,
+          text: `The deeper ${main_character} went, the more the forest seemed to close in around them. The path twisted and turned, leading into unfamiliar territory. Suddenly, a figure appeared between the trees—a woman, pale and ethereal, her eyes glowing faintly in the twilight.`
+        },
+        {
+          index_image: 1,
+          text: `"You shouldn’t be here," she whispered, her voice blending with the wind. "The forest does not forgive trespassers." Before ${main_character} could respond, she vanished, leaving only the echo of her voice behind.`
+        },
+        {
+          index_image: null,
+          text: `Unease settled over ${main_character}, but turning back wasn’t an option now. The whispers grew louder, more insistent, calling ${main_character}'s name, urging ${main_character} to go deeper into the woods.`
+        },
+        {
+          index_image: 2,
+          text: `At last, ${main_character} reached a clearing, where an ancient stone altar stood, covered in moss and ivy. Strange symbols were etched into the stones, glowing faintly in the moonlight. It was here, the whispers said, that the forest’s curse had begun.`
+        },
+        {
+          index_image: null,
+          text: `The ground began to tremble, and the trees around the clearing swayed violently. From the shadows, figures emerged—spirits of those who had been lost to the forest’s curse. Their hollow eyes locked onto ${main_character}.`
+        },
+        {
+          index_image: null,
+          text: `"Join us," they whispered in unison. ${main_character} had to find a way to escape the clearing before being claimed by the forest's ancient evil. But the path back had disappeared, and the trees loomed ever closer.`
+        }
+      ],
+      images: [
+        {
+          effects: [],
+          time_day: "twilight",
+          prompt: "A dark, eerie forest with towering trees under a setting sun"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "An ethereal woman with glowing eyes appearing between the trees in a dark forest"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A stone altar in a moonlit forest clearing, covered in ancient glowing symbols"
+        }
+      ]
+    }, {
+      title: 'The Shadow in the Mirror',
+      paragraphs: [
+        {
+          index_image: 0,
+          text: `There had always been something strange about the antique mirror that ${main_character} found in the attic. It was beautifully crafted, with ornate silver framing, but its surface seemed to shimmer unnaturally in the dim light. Curious, ${main_character} decided to bring it downstairs.`
+        },
+        {
+          index_image: null,
+          text: `As ${main_character} cleaned the mirror, they noticed something odd—a dark shape flickering in the reflection. At first, it seemed like a trick of the light, but as ${main_character} looked closer, the shadow took on the form of a person.`
+        },
+        {
+          index_image: 1,
+          text: `The figure was tall, cloaked in darkness, with glowing red eyes that stared back at ${main_character}. Startled, ${main_character} turned around, but the room was empty. The shadow was only in the mirror, watching.`
+        },
+        {
+          index_image: null,
+          text: `Unease crept over ${main_character}, but they couldn’t look away. The shadow began to move, pacing slowly within the confines of the glass. Then it spoke, its voice a low whisper: "I’ve been waiting for you."`
+        },
+        {
+          index_image: 2,
+          text: `The next few nights were filled with nightmares. ${main_character} would wake in a cold sweat, only to find the shadow watching them through the mirror. Each night, it seemed to get closer, its voice growing louder, more insistent. "Free me," it demanded.`
+        },
+        {
+          index_image: null,
+          text: `Desperate to rid themselves of the haunting, ${main_character} tried to cover the mirror, but the fabric was pulled away by invisible hands. Smashing the glass only made things worse. The shadow was no longer bound to the mirror—it was free, and it wanted revenge.`
+        },
+        {
+          index_image: null,
+          text: `Now, ${main_character} had to find a way to stop the vengeful spirit before it claimed them entirely. But how do you fight something that lives in the shadows?`
+        }
+      ],
+      images: [
+        {
+          effects: [],
+          time_day: "evening",
+          prompt: "An ornate antique mirror in a dimly lit attic"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A dark shadowy figure with glowing red eyes, visible only in a mirror"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A haunted room with a shadowy figure approaching through a mirror"
+        }
+      ]
+    }, {
+      title: 'The Cemetery Keeper’s Secret',
+      paragraphs: [
+        {
+          index_image: 0,
+          text: `Every night, the cemetery gates closed at sunset, but ${main_character} noticed that the old cemetery keeper, Mr. Graves, always stayed behind. Curious, ${main_character} decided to follow him one Halloween night, keeping to the shadows as the moon rose high in the sky.`
+        },
+        {
+          index_image: null,
+          text: `Mr. Graves moved quickly through the cemetery, weaving between the headstones until he reached an old crypt that had long been sealed shut. But to ${main_character}'s surprise, he pulled a rusty key from his pocket and unlocked the door.`
+        },
+        {
+          index_image: 1,
+          text: `Inside, the crypt was cold and musty, its stone walls covered in strange markings. As Mr. Graves descended into the darkness, ${main_character} followed cautiously, their heart pounding.`
+        },
+        {
+          index_image: null,
+          text: `Deeper inside, the air grew thick with the scent of decay. At the bottom of the crypt, a small chamber awaited. In the center stood a stone altar, and surrounding it were dozens of old, weathered coffins.`
+        },
+        {
+          index_image: 2,
+          text: `Mr. Graves began to chant in a language ${main_character} didn’t understand. Slowly, the coffins began to tremble, their lids creaking open as the dead inside stirred.`
+        },
+        {
+          index_image: null,
+          text: `Terrified, ${main_character} tried to retreat, but it was too late. Mr. Graves turned, his eyes glowing with unnatural light. "You’ve seen too much," he hissed. "Now you must join them."`
+        },
+        {
+          index_image: null,
+          text: `As the undead began to rise, ${main_character} knew there was no escaping the crypt without a fight. But the cemetery was a place of ancient magic, and not everything dead stayed dead for long.`
+        }
+      ],
+      images: [
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "An old, overgrown cemetery under the moonlight"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "An eerie crypt with strange markings on the walls, deep underground"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A stone altar surrounded by coffins, with a glowing-eyed figure chanting"
+        }
+      ]
+    }
+        
+         
   ];
 
   const randomIndex = Math.floor(Math.random() * stories.length);

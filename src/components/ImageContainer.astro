@@ -1,0 +1,41 @@
+---
+import { getAssetInfo } from "../utils/get-description";
+import { ImageDescription } from "./react/Description";
+import { IoMdDownload } from "react-icons/io";
+
+const { url } = Astro.props;
+//const description =  await getAssetInfo(id);
+const description =
+  "The image shows a close-up of a fluffy gray and white cat with a sternexpression, accompanied by text in Spanish that reads \"You're an imbecile.";
+
+//const [ showDescription, setShowDescription ] = useState();
+---
+
+<div
+  class="relative mx-auto max-w-[500px] h-auto rounded-2xl object-fit overflow-hidden group"
+>
+  <div
+    class="absolute inset-x-0 top-0 invisible group-hover:visible
+    bg-solid-to-transparency
+    w-full mx-auto h-[120px] p-2 
+    group-hover:ease-in-out duration-300 opacity-0 group-hover:opacity-100
+    flex gap-3 justify-end
+    "
+  > 
+    <a 
+      class="hover:text-white active:text-orange-500 transition duration-200 h-[30px] p-1"
+      href={url} 
+      download>
+      <span title="Download">
+        <IoMdDownload size={30} /> 
+      </span>
+    </a>
+    <ImageDescription client:load description={description} />
+  </div>
+  <!-- <img
+    class="max-w-full md:max-w-4/5 "
+    src={url}
+    alt={`${"url"}-image`}
+  /> -->
+  <img src={url} alt={`example-image`} />
+</div>

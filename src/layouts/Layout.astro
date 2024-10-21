@@ -75,6 +75,11 @@ const { title } = Astro.props;
 		background-color: light-dark(#fff, #1b1b1b);
 		color: light-dark(#283747, #d4dbdb);
 	}
+	.bg-solid-to-transparency {
+		background-color: light-dark(rgb(255, 255, 255), rgb(27, 27, 27));
+		background: linear-gradient(180deg, light-dark(rgb(255, 255, 255, 1), rgb(27, 27, 27, 1)) 0%, light-dark(rgb(255, 255, 255, 0), rgb(27, 27, 27, 0)) 100%);
+		color: light-dark(#283747, #d4dbdb);
+	}
 	hr {
 		border-top: 2px solid light-dark(#283747, #d4dbdb);
 		opacity: 0.3;
