@@ -1,0 +1,88 @@
+---
+import { RiFolderDownloadFill } from "react-icons/ri";
+import { GoHomeFill } from "react-icons/go";
+import { FaRepeat } from "react-icons/fa6";
+
+export const prerender = true;
+
+---
+
+<section class="mx-auto max-w-[1200px]">
+  <div class="w-full flex flex-col justify-center">
+    <div class="flex justify-center">
+      <button id="save-story" type="button" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
+        Save Story
+        <span>
+          <RiFolderDownloadFill color="white" size={30} />
+        </span>
+      </button>
+    </div>
+    <br/>
+    <div class="flex justify-center">
+      <button id="change-story" type="button" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
+        Change Story
+        <span>
+          <FaRepeat color="white" size={30} />
+        </span>
+      </button>
+    </div>
+    <br/>
+    <div class="flex justify-center">
+      <a href="/" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
+        Upload other image
+        <span>
+          <GoHomeFill color="white" size={30} />
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<script >
+  import * as htmlToImage from 'html-to-image';
+  import { navigate,  } from "astro:transitions/client";
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let story = document.getElementById('story');
+    let saveStory = document.getElementById('save-story');
+    let changeStory = document.getElementById('change-story');
+
+    if (story && saveStory) {
+      saveStory.addEventListener('click', () => {
+        htmlToImage.toJpeg(story, { 
+          cacheBust: true,
+          quality: 0.9,
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }
+        })
+          .then((dataUrl) => {
+            const a = document.createElement('a');
+            const titleStory = document.getElementById('title-story');
+            const formatName = titleStory?.innerText.replaceAll(' ', '-').toLowerCase() || 'story';
+            a.href = dataUrl;
+            a.download = `${formatName}.jpeg`;
+            a.click();
+          })
+          .catch((error) => {
+            console.error('Error al generar la imagen:', error);
+          });
+      });
+    } else {
+      console.warn('No se encontró el elemento "story" o "save-story".');
+    }
+    
+    if (changeStory) {
+      changeStory.addEventListener('click', () => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get('id')
+        navigate(`/photo?id=${id}`);
+      });
+    }
+  });
+</script>

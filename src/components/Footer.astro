@@ -3,21 +3,21 @@ import Logo from 'public/cloudinary-logo.svg';
 import { IoLogoGithub } from "react-icons/io";
 ---
 
-<div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-10 bg-slate-800 w-full gap-5">
+<div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-5  w-full gap-10">
   <div class="flex-1 md:block hidden">
   </div>
   <div class="flex items-center justify-center gap-2 hover:opacity-80 transition duration-200">
-    <p class="md:text-3xl text-2xl ml-5">Powered by</p>
+    <p class="md:text-2xl text-xl ml-5">Powered by</p>
     <a href="https://cloudinary.com/" target="_blank" rel="noopener noreferrer">
       <img src="/cloudinary-logo.svg" alt="Cloudinary logo" />
     </a>
   </div>
-  <div class="flex-1 hover:opacity-80 transition duration-200 ">
+  <div class="flex-1 hover:opacity-80 active:text-orange-500 transition duration-200">
     <a 
       href="https://github.com/josuebautista/hackathon-cloudinary-2024" target="_blank" rel="noopener noreferrer"
       class="flex flex-row items-center justify-center gap-2"
       >
-      <IoLogoGithub size={40} />
+      <IoLogoGithub size={30} />
       <span>Source Code</span>
     </a>
   </div>
@@ -26,7 +26,7 @@ import { IoLogoGithub } from "react-icons/io";
 
 <style>
   img {
-    width: 280px;
+    width: 220px;
     height: auto;
   }
 </style>

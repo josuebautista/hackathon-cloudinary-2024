@@ -18,9 +18,9 @@ export const ImageDescription = ({ description }: DescriptionProps) => {
     <>
       <button
         onClick={() => handleDescription()}
-        className={` transition duration-200 h-[30px] p-1 ${activeButton ? 'text-orange-500 hover:text-orange-300' : 'hover:text-white'}`}
+        className={`h-[30px] p-1 group`}
       >
-        <span title={showDescription ? 'Hide Description' : 'Show Description'}>
+        <span className={`opacity-80 transition duration-200 ${activeButton ? 'text-orange-500 hover:opacity-100' : 'hover:opacity-100'}`} title={showDescription ? 'Hide Description' : 'Show Description'}>
           <IoIosInformationCircleOutline size={30} />
         </span>
       </button>

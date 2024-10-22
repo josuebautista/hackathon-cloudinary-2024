@@ -13,5 +13,8 @@ export default defineConfig({
     react({
       include: ['**/react/*']
     })
-  ]
+  ],
+  experimental: {
+    serverIslands: true,
+  }
 });

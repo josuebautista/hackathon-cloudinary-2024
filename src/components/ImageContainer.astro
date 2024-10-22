@@ -3,12 +3,10 @@ import { getAssetInfo } from "../utils/get-description";
 import { ImageDescription } from "./react/Description";
 import { IoMdDownload } from "react-icons/io";
 
-const { url } = Astro.props;
-//const description =  await getAssetInfo(id);
-const description =
-  "The image shows a close-up of a fluffy gray and white cat with a sternexpression, accompanied by text in Spanish that reads \"You're an imbecile.";
+const { id, url } = Astro.props;
+const description =  await getAssetInfo(id);
+//const description = "The image shows a close-up of a fluffy gray and white cat with a sternexpression, accompanied by text in Spanish that reads \"You're an imbecile.";
 
-//const [ showDescription, setShowDescription ] = useState();
 ---
 
 <div
@@ -23,19 +21,14 @@ const description =
     "
   > 
     <a 
-      class="hover:text-white active:text-orange-500 transition duration-200 h-[30px] p-1"
+      class="h-[30px] p-1"
       href={url} 
       download>
-      <span title="Download">
+      <span class=" hover:opacity-100 opacity-80 active:text-orange-500 transition duration-200" title="Download">
         <IoMdDownload size={30} /> 
       </span>
     </a>
     <ImageDescription client:load description={description} />
   </div>
-  <!-- <img
-    class="max-w-full md:max-w-4/5 "
-    src={url}
-    alt={`${"url"}-image`}
-  /> -->
-  <img src={url} alt={`example-image`} />
+  <img src={url} alt={description} />
 </div>

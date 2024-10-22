@@ -1,0 +1,19 @@
+---
+import ImageContainer from "./ImageContainer.astro";
+
+import { getCldImageUrl } from "astro-cloudinary/helpers";
+
+const { id } = Astro.props;
+const url = getCldImageUrl({
+  src: id,
+  flags: 'attachment'
+});
+//const url = '/vas_a_caer.jpg';
+---
+
+<section class="mx-auto max-w-[1200px]">
+    <br />
+    <h2 class="md:text-2xl text-lg mb-3 text-center">Optimized Original Image</h2>
+    <ImageContainer url={url} />
+    <br />
+</section>

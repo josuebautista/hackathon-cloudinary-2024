@@ -1,0 +1,54 @@
+---
+import ImageContainer from "./ImageContainer.astro";
+import { getStory } from "../utils/get-prompt";
+import { getImagesGenerated } from "src/utils/get-cloudinary-images";
+
+const { id, name } = Astro.props;
+const story = getStory(name);
+const { title, paragraphs  } = story;
+const images = getImagesGenerated(story, id);
+
+//const url = '/vas_a_caer.jpg';
+
+---
+
+<section class="mx-auto max-w-[1200px]">
+  <div id="story" class="bg-solid">
+  <br />
+  <article class="mx-auto max-w-[1000px] gap-[20ox] flex flex-col justify-center">
+    <h2 id="title-story" class="text-xl md:text-2xl text-center">
+      {title}
+    </h2>
+    {
+      paragraphs.map((paragraph) => {
+        return (
+          <p class="prose dark:prose-invert text-solid text-justify mx-auto my-5 text-lg">
+            {paragraph.text}
+          </p>
+          <div class="flex justify-center">
+            {paragraph.index_image !== null && 
+            // <ImageContainer server:defer
+            //   class="max-w-full md:max-w-4/5 "
+            //   src={images[paragraph.index_image]} 
+            //   alt={`${paragraph.index_image}-image`} 
+            // />
+            //<ImageContainer server:defer id={id} url={url} />
+            <ImageContainer 
+              server:defer 
+              id={id} 
+              url={images[paragraph.index_image]} 
+            />
+            }
+          </div>
+        )
+      })
+    }
+  </article>
+  <br/>
+</div>
+</section>
+
+
+<style>
+
+</style>

@@ -2,7 +2,7 @@ import type { Story } from "../models/types";
 import { getCldImageUrl } from "astro-cloudinary/helpers";
 import type { GetCldImageUrlOptions } from "astro-cloudinary/helpers";
 
-export const getPromptsToGenerate = (story: Story, id: string): string[] => {
+export const getImagesGenerated = (story: Story, id: string): string[] => {
   if (id === null) return [];
   let results: string[] = [];
   story.images.forEach((image) => { 
@@ -21,6 +21,7 @@ export const getPromptsToGenerate = (story: Story, id: string): string[] => {
         type: "fill",
         source: true,
       },
+      flags: 'attachment',
       replaceBackground: image.prompt + ' at ' + image.time_day,
       ...effects
     })

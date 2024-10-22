@@ -8,7 +8,7 @@ cloudinary.config({
 }); 
 
 
-export const getAssetInfo = async (publicId: string): Promise<string | null> => {
+export const getAssetInfo = async (publicId: string): Promise<string> => {
   // Return all in the response
   const options: AdminAndResourceOptions = {
     all: true
@@ -25,6 +25,6 @@ export const getAssetInfo = async (publicId: string): Promise<string | null> => 
       return result.info.detection.captioning.data.caption;
       } catch (error) {
       console.error(error);
-      return null;
+      return 'Error Loading Description'
   }
 };
