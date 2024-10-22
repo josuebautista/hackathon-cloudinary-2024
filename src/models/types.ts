@@ -1,4 +1,3 @@
-import type { getCldImageUrl } from 'astro-cloudinary/helpers'
 
 export type StoryPrompt = {
   title: string;
