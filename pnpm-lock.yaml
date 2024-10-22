@@ -20,6 +20,9 @@ importers:
       '@fontsource-variable/merriweather-sans':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource/creepster':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource/luckiest-guy':
         specifier: ^5.1.0
         version: 5.1.0
@@ -559,6 +562,9 @@ packages:
 
   '@fontsource-variable/merriweather-sans@5.1.0':
     resolution: {integrity: sha512-Jb0ArUomkZrcV9gSquZpBS5JNTrvwWpJm6hEvT3qcJh/2vQX0OJi1Wy9cuN6u+rwkBF7aQ7fdaaY/I1nLL+OnA==}
+
+  '@fontsource/creepster@5.1.0':
+    resolution: {integrity: sha512-khP1Fqo/tgsal8UKO+yjT0XqIWL2lQ3S+BIa6LsKDloF3zLNAQHmUL+jutRZwBWELsOcHkqEW8ogPvASGdjUog==}
 
   '@fontsource/luckiest-guy@5.1.0':
     resolution: {integrity: sha512-F1V0LnFW7lSdmkv5zHfeBZ9aI7JLfwa0g+FCv+16sw/yvABH/oqdiaZgc3sri5QKaaEaZwHeoVUuXcn2DGbuxQ==}
@@ -3074,6 +3080,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/merriweather-sans@5.1.0': {}
+
+  '@fontsource/creepster@5.1.0': {}
 
   '@fontsource/luckiest-guy@5.1.0': {}
 

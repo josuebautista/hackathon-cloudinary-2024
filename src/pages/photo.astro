@@ -6,6 +6,8 @@ import { getRandomName } from "src/utils/get-random-name";
 import { getPromptsToGenerate } from "src/utils/get-prompts-to-generate";
 import ImageContainer from "@components/ImageContainer.astro";
 import { RiFolderDownloadFill } from "react-icons/ri";
+import { GoHomeFill } from "react-icons/go";
+import { FaRepeat } from "react-icons/fa6";
 
 const { searchParams } = Astro.url;
 // const id = searchParams.get("id");
@@ -27,20 +29,22 @@ const { title, paragraphs  } = story;
 
 <Layout title="Welcome to Astro">
   <section class="mx-auto max-w-[1200px]">
-    <h2>Optimized Original Image</h2>
-    <ImageContainer url='/vas_a_caer.jpg' />
-
-  </section>
-  <section id="story" class="mx-auto max-w-[1200px]">
     <br />
-    <article>
+    <h2 class="md:text-2xl text-lg mb-3">Optimized Original Image</h2>
+    <ImageContainer url='/vas_a_caer.jpg' />
+    <br />
+  </section>
+  <section class="mx-auto max-w-[1200px]">
+    <br />
+    <div id="story" class="bg-solid">
+    <article class="mx-auto max-w-[1000px] gap-[20ox]">
       <h2 id="title-story" class="text-xl md:text-2xl">
         {title}
       </h2>
       {
         paragraphs.map((paragraph) => {
           return (
-            <p class="prose dark:prose-invert">
+            <p class="prose dark:prose-invert text-justify">
               {paragraph.text}
             </p>
             <div class="flex justify-center">
@@ -56,16 +60,39 @@ const { title, paragraphs  } = story;
           )
         })
       }
+      <br/>
     </article>
+  </divi>
+
   </section>
   <section class="mx-auto max-w-[1200px]">
-    <div class="w-full flex justify-center">
-      <button id="save-story" type="button" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
-        Save Story
-        <span>
-          <RiFolderDownloadFill size={30} />
-        </span>
-      </button>
+    <div class="w-full flex flex-col justify-center">
+      <div class="flex justify-center">
+        <button id="save-story" type="button" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
+          Save Story
+          <span>
+            <RiFolderDownloadFill color="white" size={30} />
+          </span>
+        </button>
+      </div>
+      <br/>
+      <div class="flex justify-center">
+        <button id="save-story" type="button" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
+          Change Story
+          <span>
+            <FaRepeat color="white" size={30} />
+          </span>
+        </button>
+      </div>
+      <br/>
+      <div class="flex justify-center">
+        <button id="save-story" type="button" class="flex justify-center gap-2 items-center md:w-1/2 w-full h-[50px] p-2 bg-orange-600 hover:bg-orange-500 active:bg-orange-400 transition duration-200 text-white rounded-xl">
+          Upload another image
+          <span>
+            <GoHomeFill color="white" size={30} />
+          </span>
+        </button>
+      </div>
     </div>
   </section>
 </Layout>
@@ -109,14 +136,20 @@ const { title, paragraphs  } = story;
   import * as htmlToImage from 'html-to-image';
 
   document.addEventListener('DOMContentLoaded', () => {
-    const story = document.getElementById('story');
-    const saveStory = document.getElementById('save-story');
+    let story = document.getElementById('story');
+    let saveStory = document.getElementById('save-story');
 
     if (story && saveStory) {
       saveStory.addEventListener('click', () => {
         htmlToImage.toJpeg(story, { 
-          quality: 0.95,
-          width: 1500,
+          cacheBust: true,
+          quality: 0.9,
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }
         })
           .then((dataUrl) => {
             const a = document.createElement('a');
@@ -134,4 +167,6 @@ const { title, paragraphs  } = story;
       console.warn('No se encontró el elemento "story" o "save-story".');
     }
   });
+
+  // TODO: implement buttons actions go to home and reload page with same id
 </script>

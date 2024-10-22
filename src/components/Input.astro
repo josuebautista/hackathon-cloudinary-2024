@@ -52,12 +52,14 @@ import { CldUploadWidget } from "astro-cloudinary";
     ) => {
       //console.log(e.detail);
       const publicId = e.detail.info.public_id;
-      const description = e.detail.info.info.detection.captioning.data.caption;
+      //const description = e.detail.info.info.detection.captioning.data.caption;
       //console.log({ publicId, description, name });
       if (name !== "") {
-        navigate(`/photo?id=${publicId}&description=${description}&name=${name}`);
+        //navigate(`/photo?id=${publicId}&description=${description}&name=${name}`);
+        navigate(`/photo?id=${publicId}&name=${name}`);
       } else {
-        navigate(`/photo?id=${publicId}&description=${description}`);
+        //navigate(`/photo?id=${publicId}&description=${description}`);
+        navigate(`/photo?id=${publicId}&name=${name}`);
       }
     }) as EventListener);
   }

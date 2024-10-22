@@ -14,6 +14,7 @@
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.1",
     "@fontsource-variable/merriweather-sans": "^5.1.0",
+    "@fontsource/creepster": "^5.1.0",
     "@fontsource/luckiest-guy": "^5.1.0",
     "@fontsource/pacifico": "^5.1.0",
     "@types/react": "^18.3.11",
