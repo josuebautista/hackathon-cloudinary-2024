@@ -5,7 +5,7 @@ import type { GetCldImageUrlOptions } from "astro-cloudinary/helpers";
 export const getImagesGenerated = (story: Story, id: string): string[] => {
   if (id === null) return [];
   let results: string[] = [];
-  story.images.forEach((image) => { 
+  story.images.forEach((image) => {
     let effects: GetCldImageUrlOptions = { src: id };
     if (image.effects) {
       effects = {
@@ -21,11 +21,13 @@ export const getImagesGenerated = (story: Story, id: string): string[] => {
         type: "fill",
         source: true,
       },
+      format: 'auto',
       flags: 'attachment',
       replaceBackground: image.prompt + ' at ' + image.time_day,
       ...effects
     })
     results.push(url);
   });
+  console.log({results})
   return results
 }

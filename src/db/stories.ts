@@ -98,7 +98,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "Inside a dark clock tower, with a misty phantom figure near the clock gears"
+          prompt: "Inside a dark clock tower with a misty phantom figure near the clock gears"
         }
       ]
     }, {
@@ -162,7 +162,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A witch with glowing eyes in a haunted forest, reaching for a cursed lantern"
+          prompt: "A witch with glowing eyes in a haunted forest reaching for a cursed lantern"
         }
       ]
     }, {
@@ -237,7 +237,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "twilight",
-          prompt: "A dark, eerie forest with towering trees under a setting sun"
+          prompt: "A dark eerie forest with towering trees under a setting sun"
         },
         {
           effects: [],
@@ -247,7 +247,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A stone altar in a moonlit forest clearing, covered in ancient glowing symbols"
+          prompt: "A stone altar in a moonlit forest clearing covered in ancient glowing symbols"
         }
       ]
     }, {
@@ -291,7 +291,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A dark shadowy figure with glowing red eyes, visible only in a mirror"
+          prompt: "A dark shadowy figure with glowing red eyes visible only in a mirror"
         },
         {
           effects: [],
@@ -335,17 +335,17 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "An old, overgrown cemetery under the moonlight"
+          prompt: "An old overgrown cemetery under the moonlight"
         },
         {
           effects: [],
           time_day: "night",
-          prompt: "An eerie crypt with strange markings on the walls, deep underground"
+          prompt: "An eerie crypt with strange markings on the walls deep underground"
         },
         {
           effects: [],
           time_day: "night",
-          prompt: "A stone altar surrounded by coffins, with a glowing-eyed figure chanting"
+          prompt: "A stone altar surrounded by coffins with a glowing-eyed figure chanting"
         }
       ]
     }

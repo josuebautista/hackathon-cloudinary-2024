@@ -1,9 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
 ---
 
 <Layout title="Examples">
-  <section>
-    
+  <section class="mx-auto max-w-[1200px]">
+    <h1 class="text-center text-3xl">Examples</h1>
+    <article class="max-w-[1000px] mx-auto my-10">
+      <h2 class="text-xl">Upload the image</h2>
+      <p class="text-lg">
+        The image will be edited to generate a background scenery according to
+        the story, here are some examples:
+      </p>
+      <div
+        class="mt-5 max-w-[800px] h-auto md:columns-2 columns-1 mx-auto object-cover gap-5"
+      >
+          <img
+            class="w-full h-auto border-2 border-orange-500 rounded-3xl mb-5"
+            src="/examples/the-haunted-mansion's-dark-secret-min.jpeg"
+            alt="the-haunted-mansion's-dark-secret-min"
+          />
+        <img
+          class="w-full h-auto border-2 border-orange-500 rounded-3xl mb-5"
+          src="/examples/the-cursed-pumpkin-patch-min.jpeg"
+          alt="the-cursed-pumpkin-patch-min"
+        />
+        <img
+          class="w-full h-auto border-2 border-orange-500 rounded-3xl mb-5"
+          src="/examples/the-witch’s-lantern-min.jpeg"
+          alt="the-witch’s-lantern-min"
+        />
+        <img
+          class="w-full h-auto border-2 border-orange-500 rounded-3xl mb-5"
+          src="/examples/the-whispering-forest-min.jpeg"
+          alt="the-whispering-forest-min"
+        />
+      </div>
+    </article>
   </section>
 </Layout>

@@ -5,7 +5,22 @@ import Layout from "src/layouts/Layout.astro";
 
 
 <Layout title="About">
-  <section>
-    
+  <section class="mx-auto max-w-[1200px]">
+    <h1 class="text-center text-3xl">About</h1>
+    <article class="max-w-[1000px] mx-auto my-10">
+      <h2 class="text-xl">How it works?</h2>
+      <p class="text-lg">
+        The background scenery are generated using the 
+        <span>
+          <a href="https://cloudinary.com/documentation/transformation_reference" target="_blank">Cloudinary API</a>
+        </span>,
+        with the help of the property 'replace background'
+      </p>
+      <br/>
+      <p class="text-lg">
+        Each story has a maximum of 3 images, depending on the length of the story, all the stories are staticly generated and stories ready to edit with the name, if the user don't provide a name, a random name will be generated.
+      </p>
+    </article>
   </section>
 </Layout>
+

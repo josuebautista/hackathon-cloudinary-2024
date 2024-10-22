@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import TitleSection from "@components/TitleSection.astro";
+import OriginalImageSection from "@components/OriginalImageSection.astro";
 import StorySection from "@components/StorySection.astro";
 import OptionsSection from "@components/OptionsSection.astro";
 
@@ -14,21 +14,11 @@ if (id === null) return Astro.redirect("/404?reason=ID");
 let name = searchParams.get("name");
 if (name === null) name = getRandomName();
 
-
-//const images = getPromptsToGenerate(story, id);
-// const url = getCldImageUrl({
-//   src: id,
-// });
-
-
-//console.log({ id, description, url, images });
 ---
 
 <Layout title="Welcome to Astro">
-  <TitleSection server:defer id={id} />
-
-  <StorySection server:defer id={id} name={name} />
-  
+  <OriginalImageSection server:defer id={id} />
+  <StorySection  id={id} name={name} />
   <OptionsSection />
 </Layout>
 
