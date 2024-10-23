@@ -296,7 +296,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A haunted room with a mirror reflecting a shadow gosh"
+          prompt: "A haunted room with a mirror reflecting a ghost"
         }
       ]
     }, {
@@ -340,7 +340,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A crypt with strange markings on the walls deep underground."
+          prompt: "A dark abandoned underground room with cracks in the walls"
         },
         {
           effects: [],
@@ -492,7 +492,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A dark catacomb with an ancient stone door covered in strange glowing symbols"
+          prompt: "A dark catacomb with an ancient stone door"
         }
       ]
     }
