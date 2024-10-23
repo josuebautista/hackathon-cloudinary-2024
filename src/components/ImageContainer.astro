@@ -4,9 +4,11 @@ import { ImageDescription } from "./react/Description";
 import { IoMdDownload } from "react-icons/io";
 
 const { id, url } = Astro.props;
+const id_splited = id.split('/');
+const fileName = id_splited[1];
 const description =  await getAssetInfo(id);
 const url_splited = url.split('/f_auto/');
-const format_url = url_splited[0] + '/f_auto/fl_attachment:example/' + url_splited[1];
+const format_url = url_splited[0] + `/f_auto/fl_attachment:${fileName}/` + url_splited[1];
 
 ---
 

@@ -15,7 +15,7 @@ const url = getCldImageUrl({
 <section class="mx-auto max-w-[1200px]">
   <br />
   <h2 class="md:text-2xl text-lg mb-3 text-center">Optimized Original Image</h2>
-  <ImageContainer server:defer url={url}>
+  <ImageContainer server:defer id={id} url={url}>
     <div
       slot="fallback"
       class="bg-fallback mx-auto w-[500px] h-[500px] rounded-2xl flex flex-col justify-center items-center"
