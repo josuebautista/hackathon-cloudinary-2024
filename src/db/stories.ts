@@ -348,9 +348,155 @@ export const getFormatedStory = (character: string): Story => {
           prompt: "A stone altar surrounded by coffins with a glowing-eyed figure chanting"
         }
       ]
+    }, {
+      title: 'The Forgotten Carnival',
+      paragraphs: [
+        {
+          index_image: 0,
+          text: `It had been years since anyone had spoken about the carnival that mysteriously disappeared one Halloween night. But ${main_character} had always been curious, and when ${main_character} heard rumors that the carnival grounds had reappeared deep in the forest, the temptation was too strong to resist.`
+        },
+        {
+          index_image: null,
+          text: `As the sun set, ${main_character} ventured into the woods, following the faint sound of distant music. The trees parted to reveal the carnival—a twisted version of what it once was. The Ferris wheel stood crooked, its rusted metal creaking in the wind, and the merry-go-round spun slowly, though no one was on it.`
+        },
+        {
+          index_image: 1,
+          text: `The air was thick with the scent of popcorn and decay, and the lights of the carnival flickered erratically. ${main_character} approached the ticket booth, where an eerie clown sat slumped in a chair, its face frozen in a grotesque grin. "Welcome back," it whispered as ${main_character} reached for a ticket.`
+        },
+        {
+          index_image: null,
+          text: `Inside the carnival, everything felt wrong. The funhouse mirrors showed distorted reflections of ${main_character}, but in one of them, the reflection began to move independently. It smiled wickedly and reached out from the mirror.`
+        },
+        {
+          index_image: null,
+          text: `${main_character} ran, but the laughter of unseen performers followed. The carnival was a trap, its attractions designed to pull in curious souls. In the distance, the Ferris wheel began to turn, and ${main_character} knew there was no easy way out.`
+        },
+        {
+          index_image: 2,
+          text: `The lights began to dim, and a shadowy figure emerged from the funhouse, its eyes glowing with malevolent energy. "You’re the main act now," it hissed. The carnival had claimed many before ${main_character}, and now it wanted a new performer.`
+        },
+        {
+          index_image: null,
+          text: `The only way to escape was to find the heart of the carnival—the source of its cursed magic. But time was running out, and every path led deeper into the nightmare. Could ${main_character} break the spell before becoming a permanent part of the show?.`
+        }
+      ],
+      images: [
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A creepy abandoned carnival in the middle of the forest, with eerie flickering lights"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "An abandoned carnival with a grotesque clown sitting on a rusty ticket booth"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A house with an open door where a shadow emerges from it"
+        }
+      ]
+    }, {
+      title: 'The Witch’s Curse',
+      paragraphs: [
+        {
+          index_image: 0,
+          text: `Long ago, a powerful witch was banished from the village, but before she disappeared, she swore revenge. It was said that she placed a curse on anyone who dared to enter the forest where she had lived. But ${main_character}, driven by curiosity, couldn’t resist exploring the forbidden woods.`
+        },
+        {
+          index_image: null,
+          text: `As ${main_character} ventured deeper into the forest, the air grew thick with mist, and strange symbols appeared carved into the trees. The further ${main_character} walked, the quieter the world became, until the only sound was the crunch of leaves beneath ${main_character}'s feet.`
+        },
+        {
+          index_image: 1,
+          text: `Suddenly, the ground shifted beneath ${main_character}, revealing a hidden path that led to an ancient stone cottage, overgrown with vines and thorns. This was where the witch had lived, where her power still lingered.`
+        },
+        {
+          index_image: null,
+          text: `${main_character} felt a cold presence watching from the shadows. Inside the cottage, the walls were lined with jars of strange ingredients, and in the center of the room, a cauldron bubbled with a dark, ominous liquid.`
+        },
+        {
+          index_image: 2,
+          text: `A voice echoed through the air: "You’ve come to break the curse, haven’t you?" The witch's spirit appeared, her eyes glowing with unnatural light. "But the curse isn’t broken—it’s passed on." With a wave of her hand, the symbols on the trees began to glow.`
+        },
+        {
+          index_image: null,
+          text: `The forest twisted and shifted around ${main_character}, trapping ${main_character} within its cursed grasp. To escape, ${main_character} had to find a way to undo the witch’s magic, but time was running out, and the forest was closing in.`
+        },
+        {
+          index_image: null,
+          text: `The witch’s spirit watched from the shadows, waiting for ${main_character} to fail, so she could claim another soul for her cursed forest. Could ${main_character} break the ancient spell before becoming the witch’s next victim?`
+        }
+      ],
+      images: [
+        {
+          effects: [],
+          time_day: "twilight",
+          prompt: "A dense eerie forest with mist and strange glowing symbols carved into trees"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A dark forest with an old stone hut covered in vines"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A dark forest covered with vegetation with a ghost witch"
+        }
+      ]
+    }, {
+      title: 'The Catacombs Below',
+      paragraphs: [
+        {
+          index_image: 0,
+          text: `Underneath the ancient city lay the catacombs, a maze of tunnels where the dead were buried long ago. Few dared to venture into the depths, for it was said that the spirits of the dead still walked the dark passages. But ${main_character} had heard rumors of a treasure hidden deep within the catacombs and decided to brave the journey.`
+        },
+        {
+          index_image: null,
+          text: `The entrance to the catacombs was cold and silent, the air thick with the smell of damp stone. ${main_character} descended into the darkness, the narrow passageways lined with ancient bones and forgotten tombs. The deeper ${main_character} went, the more the air seemed to press down, as if the walls were closing in.`
+        },
+        {
+          index_image: 1,
+          text: `Suddenly, a soft whisper echoed through the tunnels, growing louder with each step. Shadows danced along the walls, moving without any source of light. ${main_character} realized they weren’t alone. Something was following, something that had been buried for centuries.`
+        },
+        {
+          index_image: null,
+          text: `The whispers turned to moans, and soon, the shadows took shape—phantom figures dressed in tattered robes, their eyes hollow and glowing faintly in the dark. They moved slowly, but with purpose, as if drawn to ${main_character}'s presence.`
+        },
+        {
+          index_image: 2,
+          text: `${main_character} quickened their pace, heart racing, but the catacombs seemed endless, twisting and turning in ways that defied logic. Just when it seemed there was no escape, ${main_character} stumbled upon an ancient chamber, where a massive stone door stood, covered in strange symbols.`
+        },
+        {
+          index_image: null,
+          text: `The treasure lay beyond the door, but so did something else—something much older and more dangerous than the spirits that haunted the tunnels. With the ghosts closing in, ${main_character} had to make a choice: open the door and risk whatever lay beyond, or turn back and face the wrath of the catacombs' restless dead.`
+        },
+        {
+          index_image: null,
+          text: `As the door began to creak open, the ground shook, and a deep, guttural voice whispered from the darkness: "You’ve awakened me." The catacombs had one final secret, and ${main_character} was about to uncover it.`
+        }
+      ],
+      images: [
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A dark ancient catacomb filled with old bones and forgotten tombs"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "An ancient and dark catacomb with shadows of phantom figures"
+        },
+        {
+          effects: [],
+          time_day: "night",
+          prompt: "A dark catacomb with an ancient stone door covered in strange glowing symbols"
+        }
+      ]
     }
-        
-         
+    
   ];
 
   const randomIndex = Math.floor(Math.random() * stories.length);
