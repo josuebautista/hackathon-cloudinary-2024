@@ -1,8 +1,17 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import ImageContainer from "@components/ImageContainer.astro";
+import { getCldImageUrl } from "astro-cloudinary/helpers";
 
+const id_example  = 'hackathon-media/rqnj77oe2j2gu5t6bkwz';
+const url = getCldImageUrl({
+  src: id_example,
+});
 ---
 
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/quantum.js"></script>
 
 <Layout title="About">
   <section class="mx-auto max-w-[1200px]">
@@ -10,17 +19,47 @@ import Layout from "src/layouts/Layout.astro";
     <article class="max-w-[1000px] mx-auto my-10">
       <h2 class="text-xl">How it works?</h2>
       <p class="text-lg">
-        The background scenery are generated using the 
+        Image backgrounds are dynamically generated with 
         <span>
-          <a href="https://cloudinary.com/documentation/transformation_reference" target="_blank">Cloudinary API</a>
-        </span>,
-        with the help of the property 'replace background'
+          <a
+            class="hover:opacity-80 transition duration-200 link-solid"
+            href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon?customer_external_id=2fad53d5007cb27e5a436f1111c8e5&frameless=1#ai_based_image_captioning"
+            target="_blank">Generative background replace</a
+          >
+        </span> function of Cloudinary.
       </p>
-      <br/>
+      <br />
       <p class="text-lg">
-        Each story has a maximum of 3 images, depending on the length of the story, all the stories are staticly generated and stories ready to edit with the name, if the user don't provide a name, a random name will be generated.
+        Each story has a maximum of 3 images, depending on the length of the
+        story, all the stories are staticly generated and stories ready to edit
+        with the name, if the user don't provide a name, a random name will be
+        generated.
       </p>
+      <br />
+      <h2 class="text-xl">About the description</h2>
+      <p class="text-lg">
+        <span>
+          The AI-based image captioning function of
+          <a
+            class="hover:opacity-80 transition duration-200 link-solid"
+            href="https://cloudinary.com/documentation/cloudinary_ai_content_analysis_addon?customer_external_id=2fad53d5007cb27e5a436f1111c8e5&frameless=1#ai_based_image_captioning"
+            target="_blank"
+          >
+            Cloudinary AI Content Analysis
+          </a>
+        </span> is used to generate the description of the images, you can see it by hover the images and click the details icon and optionaly you can donwload the image.
+      </p>
+      <div class="my-5">
+        <ImageContainer server:defer id={id_example} url={url}>
+          <div
+            slot="fallback"
+            class="bg-fallback mx-auto w-[500px] h-[500px] rounded-2xl flex flex-col justify-center items-center"
+          >
+            <l-quantum size="55" speed="2.0" color="orange"></l-quantum>
+            <span>Loading Image</span>
+          </div>
+        </ImageContainer>
+      </div>
     </article>
   </section>
 </Layout>
-

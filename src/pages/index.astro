@@ -4,7 +4,7 @@ import Input from "../components/Input.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<section>
+	<section class="max-w-[1200px] min-h-[70vh] mx-auto flex flex-col justify-center items-center text-center">
 		<p class="max-w-[700px] mb-5">
 			Upload an image to generate a halloween story, the image will be used as the main character.
 		</p>
@@ -14,13 +14,3 @@ import Input from "../components/Input.astro";
 	</section>
 </Layout>
 
-<style>
-	section {
-		min-height: 70vh;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-</style>
