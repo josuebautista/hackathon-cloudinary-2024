@@ -384,7 +384,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A creepy abandoned carnival in the middle of the forest, with eerie flickering lights"
+          prompt: "A halloween carnival in the middle of the forest with eerie flickering lights"
         },
         {
           effects: [],
@@ -394,7 +394,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A house with an open door where a shadow emerges from it"
+          prompt: "A house with an open door where a ghost emerges from it"
         }
       ]
     }, {

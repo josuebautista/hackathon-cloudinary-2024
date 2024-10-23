@@ -16,7 +16,7 @@ const url = getCldImageUrl({
   <ImageContainer server:defer id={id} url={url}>
     <div
       slot="fallback"
-      class="bg-fallback mx-auto w-[500px] h-[500px] rounded-2xl flex flex-col justify-center items-center"
+      class="bg-fallback mx-auto w-[500px] h-[500px] rounded-2xl flex flex-col justify-center items-center gap-2"
     >
       <l-quantum size="55" speed="2.0" color="orange"></l-quantum>
       <span>Loading Image</span>
