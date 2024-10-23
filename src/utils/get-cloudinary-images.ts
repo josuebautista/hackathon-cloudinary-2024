@@ -19,10 +19,7 @@ export const getImagesGenerated = (story: Story, id: string): string[] => {
     const url = getCldImageUrl({
       fillBackground: true,
       aspectRatio: "16:9",
-      crop: {
-        type: "pad",
-        source: true,
-      },
+      
       format: 'auto',
       flags: 'attachment',
       replaceBackground: image.prompt + ' at ' + image.time_day,

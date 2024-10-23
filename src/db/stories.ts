@@ -394,7 +394,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A house with an open door where a ghost emerges from it"
+          prompt: "An old dark house with an open door"
         }
       ]
     }, {
