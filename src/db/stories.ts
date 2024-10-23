@@ -291,12 +291,12 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "A dark shadowy figure with glowing red eyes visible only in a mirror"
+          prompt: "An attic with a mirror that reflects the shadow of a ghost."
         },
         {
           effects: [],
           time_day: "night",
-          prompt: "A haunted room with a shadowy figure approaching through a mirror"
+          prompt: "A haunted room with a mirror reflecting a shadow gosh"
         }
       ]
     }, {
@@ -340,7 +340,7 @@ export const getFormatedStory = (character: string): Story => {
         {
           effects: [],
           time_day: "night",
-          prompt: "An eerie crypt with strange markings on the walls deep underground"
+          prompt: "A crypt with strange markings on the walls deep underground."
         },
         {
           effects: [],
