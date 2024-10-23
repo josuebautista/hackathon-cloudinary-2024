@@ -28,6 +28,6 @@ export const getImagesGenerated = (story: Story, id: string): string[] => {
     })
     results.push(url);
   });
-  console.log({results})
+  //console.log({results})
   return results
 }

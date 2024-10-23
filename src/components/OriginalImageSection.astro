@@ -6,8 +6,6 @@ import { getCldImageUrl } from "astro-cloudinary/helpers";
 const { id } = Astro.props;
 const url = getCldImageUrl({
   src: id,
-  format: "auto",
-  flags: "attachment",
 });
 //const url = '/vas_a_caer.jpg';
 

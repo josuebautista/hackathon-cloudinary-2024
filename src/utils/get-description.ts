@@ -9,7 +9,6 @@ cloudinary.config({
 
 
 export const getAssetInfo = async (publicId: string): Promise<string> => {
-  // Return all in the response
   const options: AdminAndResourceOptions = {
     all: true
   };
@@ -28,3 +27,4 @@ export const getAssetInfo = async (publicId: string): Promise<string> => {
       return 'Error Loading Description'
   }
 };
+

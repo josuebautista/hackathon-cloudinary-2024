@@ -5,7 +5,8 @@ import { IoMdDownload } from "react-icons/io";
 
 const { id, url } = Astro.props;
 const description =  await getAssetInfo(id);
-//const description = "The image shows a close-up of a fluffy gray and white cat with a sternexpression, accompanied by text in Spanish that reads \"You're an imbecile.";
+const url_splited = url.split('/f_auto/');
+const format_url = url_splited[0] + '/f_auto/fl_attachment:example/' + url_splited[1];
 
 ---
 
@@ -22,7 +23,8 @@ const description =  await getAssetInfo(id);
   > 
     <a 
       class="h-[30px] p-1"
-      href={url} 
+      href={format_url} 
+      target="_blank"
       download>
       <span class=" hover:opacity-100 opacity-80 active:text-orange-500 transition duration-200" title="Download">
         <IoMdDownload size={30} /> 
